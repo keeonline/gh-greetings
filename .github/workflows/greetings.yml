@@ -1,13 +1,13 @@
-name: Placeholder
+name: Greetings from GitHub Actions
 
 on: 
     workflow_dispatch:
 
 jobs:
     placeholder:
-        name: Placeholder
+        name: Display Greetings
         runs-on: ubuntu-24.04
         steps:
-            - name: Placeholder
+            - name: Say Hello
               run: |
-                echo "placeholder"
+                echo "Hello World!"
