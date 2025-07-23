@@ -22,4 +22,4 @@ jobs:
 
             - name: Show outputs
               run: | 
-                echo "next_semantic_version=${{step.next_semantic.outputs.version_tag}}"
+                echo "next_semantic_version=${{steps.next_semantic.outputs.version_tag}}"
