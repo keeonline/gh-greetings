@@ -11,6 +11,15 @@ jobs:
         name: Feature Push
         runs-on: ubuntu-24.04
         steps:
+            - name: Checkout sources
+              uses: action/checkout@v4
+              with:
+                fetch-depth: 0
+
+            - name: Get the next semantic version for the repo
+              id: next_semantic
+              uses: paulhatch/semantic-version@5.4.0
+
             - name: Show outputs
               run: | 
-                echo "this is a placeholder"
+                echo "next_semantic_version=${{step.next_semantic.outputs.version_tag}}"
