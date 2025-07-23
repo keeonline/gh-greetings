@@ -1,0 +1,16 @@
+name: On Push to Feature Branch
+
+on:
+    push:
+        branches:
+            - '**'
+            - '!main'
+
+jobs:
+    feature-branch-push:
+        name: Feature Push
+        runs-on: ubuntu-24.04
+        steps:
+            - name: Show outputs
+              run: | 
+                echo "this is a placeholder"
