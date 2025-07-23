@@ -4,10 +4,13 @@ on:
     workflow_dispatch:
 
 jobs:
-    placeholder:
+    greetings:
         name: Display Greetings
         runs-on: ubuntu-24.04
         steps:
             - name: Say Hello
               run: |
                 echo "Hello World!"
+            - name: Si Hola
+              run: |
+                echo "¡Hola Mundo!"
