@@ -8,26 +8,6 @@ on:
 jobs:
     main-branch-push:
         name: Main Push
-        runs-on: ubuntu-24.04
+        uses: keeonline/gh-workflows/.github/workflows/on-push-main.yml@v0.0.2
         permissions:
           contents: write
-        steps:
-            - name: Checkout sources
-              uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
-
-            - name: Get the next semantic version for the repo
-              id: next_semantic
-              uses: paulhatch/semantic-version@v5.4.0
-
-            - name: Show outputs
-              run: | 
-                echo "next_semantic_version=${{steps.next_semantic.outputs.version_tag}}"
-
-            - name: Tag Repo
-              uses: richardsimko/update-tag@v1.1.6
-              with:
-                tag_name: ${{steps.next_semantic.outputs.version_tag}}
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
